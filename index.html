@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PeaBelle — Your Safe Space for Self-Love & Wellness</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #E70FBD;
+    --pink-light: #FF6DD8;
+    --pink-pale: #FFF0FA;
+    --pink-border: #FFD6F0;
+    --dark: #1A0A14;
+    --dark-2: #2D1525;
+    --grey: #6B7280;
+    --white: #FFFFFF;
+    --cream: #FFF9FE;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--pink-border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--grey);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--pink); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    transition: opacity 0.2s !important;
+  }
+
+  .nav-cta:hover { opacity: 0.85; color: white !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FFF9FE 0%, #FFF0FA 50%, #FDE8F5 100%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(231,15,189,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,109,216,0.10) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 560px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid var(--pink-border);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--pink);
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 22px;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--pink);
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--grey);
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s ease 0.3s both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(231,15,189,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(231,15,189,0.45);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: var(--dark);
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1.5px solid var(--pink-border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--pink);
+    color: var(--pink);
+  }
+
+  .hero-mockup {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .phone-frame {
+    width: 280px;
+    height: 560px;
+    background: var(--dark);
+    border-radius: 44px;
+    border: 8px solid #2D1525;
+    position: relative;
+    box-shadow:
+      0 40px 80px rgba(0,0,0,0.25),
+      0 0 0 1px rgba(255,255,255,0.1) inset;
+    overflow: hidden;
+  }
+
+  .phone-notch {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 100px; height: 28px;
+    background: var(--dark);
+    border-radius: 0 0 20px 20px;
+    z-index: 10;
+  }
+
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #FFF9FE, #FFF0FA);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 16px 24px;
+    gap: 12px;
+    overflow: hidden;
+  }
+
+  .phone-app-logo {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+
+  .phone-app-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .phone-card {
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    padding: 12px;
+    border: 1px solid var(--pink-border);
+    font-size: 11px;
+  }
+
+  .phone-card-label {
+    font-size: 9px;
+    color: var(--pink);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .phone-card-text {
+    font-size: 11px;
+    color: var(--dark);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .phone-mood-row {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .phone-mood-item {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-size: 9px;
+    border: 1px solid var(--pink-border);
+  }
+
+  .phone-mood-item span:first-child { font-size: 16px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 100px 48px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--pink);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 20px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--pink);
+  }
+
+  .section-sub {
+    font-size: 18px;
+    color: var(--grey);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 560px;
+  }
+
+  /* ── WHY PEABELLE ── */
+  .why {
+    background: var(--dark);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(231,15,189,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .why .section-title { color: white; }
+  .why .section-sub { color: rgba(255,255,255,0.6); max-width: 100%; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  .why-story {
+    position: relative;
+    z-index: 2;
+  }
+
+  .why-story p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .why-story p strong {
+    color: white;
+    font-weight: 600;
+  }
+
+  .why-story .highlight {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: var(--pink-light);
+    font-weight: 400;
+  }
+
+  .why-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .why-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .why-stat-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, rgba(255,109,216,0.2), rgba(231,15,189,0.2));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .why-stat-text h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .why-stat-text p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  /* ── BELLE AI ── */
+  .belle-ai {
+    background: var(--cream);
+  }
+
+  .belle-ai-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .chat-mockup {
+    background: white;
+    border-radius: 28px;
+    padding: 24px;
+    box-shadow: 0 20px 60px rgba(231,15,189,0.12);
+    border: 1px solid var(--pink-border);
+  }
+
+  .chat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--pink-border);
+    margin-bottom: 20px;
+  }
+
+  .chat-avatar {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .chat-name { font-weight: 600; font-size: 15px; color: var(--dark); }
+  .chat-status { font-size: 12px; color: var(--pink); }
+
+  .chat-messages { display: flex; flex-direction: column; gap: 12px; }
+
+  .chat-bubble {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .chat-bubble.user {
+    background: var(--pink);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+
+  .chat-bubble.belle {
+    background: var(--pink-pale);
+    color: var(--dark);
+    border: 1px solid var(--pink-border);
+    border-bottom-left-radius: 4px;
+  }
+
+  .chat-features {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .chat-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .chat-feature-icon {
+    width: 48px; height: 48px;
+    background: var(--pink-pale);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    border: 1px solid var(--pink-border);
+  }
+
+  .chat-feature h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .chat-feature p {
+    font-size: 14px;
+    color: var(--grey);
+    line-height: 1.6;
+  }
+
+  /* ── WELLNESS ── */
+  .wellness {
+    background: white;
+  }
+
+  .wellness-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .wellness-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .wellness-cat {
+    background: var(--pink-pale);
+    border: 1px solid var(--pink-border);
+    border-radius: 20px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+
+  .wellness-cat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(231,15,189,0.15);
+  }
+
+  .wellness-cat-icon { font-size: 28px; margin-bottom: 8px; }
+
+  .wellness-cat h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .wellness-cat p {
+    font-size: 12px;
+    color: var(--grey);
+    line-height: 1.5;
+  }
+
+  /* ── JOURNAL ── */
+  .journal-section {
+    background: linear-gradient(135deg, #FFF9FE, #FFF0FA);
+  }
+
+  .journal-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .journal-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .journal-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: white;
+    border: 1px solid var(--pink-border);
+    border-radius: 16px;
+    padding: 16px 20px;
+  }
+
+  .journal-feature-dot {
+    width: 10px; height: 10px;
+    background: var(--pink);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .journal-feature span {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+
+  .mood-display {
+    background: white;
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow: 0 20px 60px rgba(231,15,189,0.10);
+    border: 1px solid var(--pink-border);
+  }
+
+  .mood-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--grey);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .mood-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .mood-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: var(--pink-pale);
+    border-radius: 14px;
+    padding: 12px 8px;
+    border: 1px solid var(--pink-border);
+  }
+
+  .mood-item span:first-child { font-size: 24px; }
+  .mood-item span:last-child { font-size: 10px; color: var(--grey); font-weight: 500; }
+  .mood-item.active { background: var(--pink); border-color: var(--pink); }
+  .mood-item.active span:last-child { color: rgba(255,255,255,0.8); }
+
+  .streak-card {
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .streak-card span:first-child { font-size: 32px; }
+  .streak-info h4 { font-size: 20px; font-weight: 700; color: white; }
+  .streak-info p { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+  /* ── COMMUNITY ── */
+  .community-section { background: var(--dark); }
+  .community-section .section-title { color: white; }
+  .community-section .section-sub { color: rgba(255,255,255,0.6); }
+  .community-section .section-label { color: var(--pink-light); }
+
+  .community-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .community-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .community-post {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .post-avatar {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+  }
+
+  .post-name { font-size: 13px; font-weight: 600; color: white; }
+  .post-anon { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+  .post-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .post-actions {
+    display: flex;
+    gap: 16px;
+  }
+
+  .post-action {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .community-points {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .community-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .community-point-icon {
+    width: 48px; height: 48px;
+    background: rgba(231,15,189,0.15);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .community-point h4 { font-size: 16px; font-weight: 600; color: white; margin-bottom: 4px; }
+  .community-point p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* ── SCREENSHOTS ── */
+  .screenshots { background: var(--cream); }
+
+  .screenshots-title { text-align: center; margin-bottom: 60px; }
+  .screenshots-title .section-label { justify-content: center; }
+  .screenshots-title .section-title { margin: 0 auto 16px; }
+
+  .screenshots-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 20px 0 40px;
+    scrollbar-width: none;
+  }
+
+  .screenshots-scroll::-webkit-scrollbar { display: none; }
+
+  .screenshot-frame {
+    flex-shrink: 0;
+    width: 200px;
+    height: 400px;
+    background: var(--dark);
+    border-radius: 32px;
+    border: 6px solid #2D1525;
+    overflow: hidden;
+    box-shadow: 0 20px 48px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+  }
+
+  .screenshot-frame:hover { transform: translateY(-8px) scale(1.02); }
+
+  .screenshot-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .screenshot-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #FFF9FE, #FFF0FA);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 32px;
+  }
+
+  .screenshot-placeholder span {
+    font-size: 11px;
+    color: var(--grey);
+    font-weight: 500;
+  }
+
+  /* ── FAMILY ── */
+  .family {
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
+    text-align: center;
+    padding: 100px 48px;
+  }
+
+  .family h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.15;
+  }
+
+  .family p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  /* ── DOWNLOAD ── */
+  .download {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 48px;
+  }
+
+  .download-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1000px;
+    text-align: left;
+  }
+
+  .download-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .download-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .step-num {
+    width: 32px; height: 32px;
+    background: var(--pink);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .step-text h4 { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 2px; }
+  .step-text p { font-size: 13px; color: var(--grey); line-height: 1.5; }
+
+  .download-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background: var(--pink-pale);
+    border: 1.5px solid var(--pink-border);
+    border-radius: 28px;
+    padding: 40px 32px;
+  }
+
+  .download-cta .phone-emoji { font-size: 64px; }
+
+  .download-note {
+    font-size: 12px;
+    color: var(--grey);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ── FAQ ── */
+  .faq { background: var(--cream); }
+
+  .faq-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .faq-title { text-align: center; margin-bottom: 48px; }
+  .faq-title .section-label { justify-content: center; }
+
+  .faq-item {
+    border: 1px solid var(--pink-border);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: white;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    text-align: left;
+    gap: 16px;
+    transition: background 0.2s;
+  }
+
+  .faq-question:hover { background: var(--pink-pale); }
+
+  .faq-icon {
+    width: 24px; height: 24px;
+    background: var(--pink-pale);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--pink);
+    font-size: 16px;
+    font-weight: 300;
+    transition: transform 0.3s;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .faq-item.open .faq-answer { max-height: 300px; }
+
+  .faq-answer-inner {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    color: var(--grey);
+    line-height: 1.7;
+  }
+
+  .faq-answer-inner ol, .faq-answer-inner ul {
+    padding-left: 18px;
+    margin-top: 8px;
+  }
+
+  .faq-answer-inner li { margin-bottom: 6px; }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--dark);
+    text-align: center;
+    padding: 100px 48px;
+  }
+
+  .contact .section-title { color: white; }
+  .contact .section-sub { color: rgba(255,255,255,0.6); margin: 0 auto 48px; }
+  .contact .section-label { justify-content: center; color: var(--pink-light); }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 14px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .contact-link:hover {
+    background: rgba(231,15,189,0.15);
+    border-color: var(--pink);
+  }
+
+  .contact-link span { font-size: 18px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0F0009;
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--pink); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    section { padding: 72px 20px; }
+    .hero { padding: 100px 20px 60px; flex-direction: column; gap: 48px; }
+    .hero-mockup { display: none; }
+    .why-grid,
+    .belle-ai-inner,
+    .wellness-inner,
+    .journal-inner,
+    .community-inner,
+    .download-inner { grid-template-columns: 1fr; gap: 40px; }
+    .community-inner { margin-top: 40px; }
+    footer { flex-direction: column; text-align: center; padding: 24px 20px; }
+    .family, .download, .contact { padding: 72px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🌸</div>
+    PeaBelle
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#belle">Belle AI</a></li>
+    <li><a href="#wellness">Wellness</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#download" class="nav-cta">Download</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">🌸 Now available for Android</div>
+    <h1>Your safe space for <em>self-love,</em> wellness & growth.</h1>
+    <p>Journal your thoughts, connect with supportive girls, explore wellness content, and chat with Belle AI — all in one place.</p>
+    <div class="hero-buttons">
+      <a href="#download" class="btn-primary">⬇ Download App</a>
+      <a href="#about" class="btn-secondary">Learn More →</a>
+    </div>
+  </div>
+  <div class="hero-mockup">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-app-logo">🌸</div>
+        <div class="phone-app-name">PeaBelle</div>
+        <div class="phone-card">
+          <div class="phone-card-label">✨ Daily Affirmation</div>
+          <div class="phone-card-text">I am enough, exactly as I am right now.</div>
+        </div>
+        <div class="phone-mood-row">
+          <div class="phone-mood-item"><span>😊</span><span>Happy</span></div>
+          <div class="phone-mood-item"><span>😌</span><span>Calm</span></div>
+          <div class="phone-mood-item"><span>💪</span><span>Strong</span></div>
+          <div class="phone-mood-item"><span>🤩</span><span>Excited</span></div>
+        </div>
+        <div class="phone-card">
+          <div class="phone-card-label">🌸 Wellness</div>
+          <div class="phone-card-text">Body & Confidence · 10 topics</div>
+        </div>
+        <div class="phone-card">
+          <div class="phone-card-label">💬 Community</div>
+          <div class="phone-card-text">"You're not alone in this journey 💗"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PEABELLE -->
+<section class="why" id="about">
+  <div class="section-label">💖 Why PeaBelle</div>
+  <div class="why-grid">
+    <div class="why-story">
+      <h2 class="section-title">Growing up isn't always <em>easy.</em></h2>
+      <p>Between school, friendships, confidence struggles, social media pressure, and daily stress — <strong>many girls need a safe place to breathe, reflect, and grow.</strong></p>
+      <p>Most wellness apps throw features at you. PeaBelle was built differently. It starts with <strong>understanding what you're actually going through</strong> — and meeting you exactly where you are.</p>
+      <p class="highlight">"That's why PeaBelle was created."</p>
+    </div>
+    <div class="why-stats">
+      <div class="why-stat">
+        <div class="why-stat-icon">🧠</div>
+        <div class="why-stat-text">
+          <h4>Emotionally Intelligent</h4>
+          <p>Belle AI adapts to your mood and emotional patterns — not just keywords.</p>
+        </div>
+      </div>
+      <div class="why-stat">
+        <div class="why-stat-icon">🔒</div>
+        <div class="why-stat-text">
+          <h4>Anonymous & Safe</h4>
+          <p>Your identity is protected in the community. Share freely without fear.</p>
+        </div>
+      </div>
+      <div class="why-stat">
+        <div class="why-stat-icon">🌸</div>
+        <div class="why-stat-text">
+          <h4>Built for Teen Girls</h4>
+          <p>Every feature was designed with young women in mind — from content to tone.</p>
+        </div>
+      </div>
+      <div class="why-stat">
+        <div class="why-stat-icon">💡</div>
+        <div class="why-stat-text">
+          <h4>Real Wellness Education</h4>
+          <p>70+ articles across 7 categories written in a warm, big-sister tone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BELLE AI -->
+<section class="belle-ai" id="belle">
+  <div class="belle-ai-inner">
+    <div class="chat-mockup">
+      <div class="chat-header">
+        <div class="chat-avatar">🌸</div>
+        <div>
+          <div class="chat-name">Belle</div>
+          <div class="chat-status">✨ Always here</div>
+        </div>
+      </div>
+      <div class="chat-messages">
+        <div class="chat-bubble user">I don't feel good about myself today 😞</div>
+        <div class="chat-bubble belle">I hear you, and I'm really glad you shared that with me. Some days feel heavier than others — and that's okay. You don't have to feel perfect to be worthy. 💗</div>
+        <div class="chat-bubble user">I got bullied about how I look</div>
+        <div class="chat-bubble belle">That must have really hurt, and I'm so sorry that happened. Please know that someone else's cruelty says nothing about your worth. You are so much more than how you look. 🌸</div>
+        <div class="chat-bubble belle">What's one thing about yourself that you actually love — even a little?</div>
+      </div>
+    </div>
+    <div class="chat-features">
+      <div class="section-label">🤖 Belle AI</div>
+      <h2 class="section-title">Your personal wellness <em>companion.</em></h2>
+      <p class="section-sub">Belle isn't a robotic chatbot. She's warm, emotionally intelligent, and always ready to listen — like a trusted older sister.</p>
+      <div class="chat-feature">
+        <div class="chat-feature-icon">💭</div>
+        <div>
+          <h4>Mood-Aware Responses</h4>
+          <p>Belle reads your mood and adapts her responses and affirmations to match what you need.</p>
+        </div>
+      </div>
+      <div class="chat-feature">
+        <div class="chat-feature-icon">🔁</div>
+        <div>
+          <h4>Conversation History</h4>
+          <p>Pick up where you left off. Your conversations with Belle are always saved and accessible.</p>
+        </div>
+      </div>
+      <div class="chat-feature">
+        <div class="chat-feature-icon">✨</div>
+        <div>
+          <h4>Personalized Affirmations</h4>
+          <p>Daily affirmations based on your recent mood and emotional patterns — not random quotes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELLNESS HUB -->
+<section class="wellness" id="wellness">
+  <div class="wellness-inner">
+    <div>
+      <div class="section-label">🌸 Wellness Hub</div>
+      <h2 class="section-title">Real knowledge. <em>Warm tone.</em></h2>
+      <p class="section-sub">Explore 70+ articles across 7 wellness categories — all written like a big sister talking to you, not a textbook.</p>
+      <div class="journal-features" style="margin-top:32px;">
+        <div class="journal-feature"><div class="journal-feature-dot"></div><span>Articles that actually speak to your life</span></div>
+        <div class="journal-feature"><div class="journal-feature-dot"></div><span>Save your favourites to your profile</span></div>
+        <div class="journal-feature"><div class="journal-feature-dot"></div><span>Track your reading progress</span></div>
+        <div class="journal-feature"><div class="journal-feature-dot"></div><span>Related articles to keep learning</span></div>
+      </div>
+    </div>
+    <div class="wellness-categories">
+      <div class="wellness-cat">
+        <div class="wellness-cat-icon">💪</div>
+        <h4>Body & Confidence</h4>
+        <p>Love and understand your body</p>
+      </div>
+      <div class="wellness-cat">
+        <div class="wellness-cat-icon">💜</div>
+        <h4>Emotional Wellness</h4>
+        <p>Understand and manage your feelings</p>
+      </div>
+      <div class="wellness-cat">
+        <div class="wellness-cat-icon">🌱</div>
+        <h4>Self-Love & Growth</h4>
+        <p>Boundaries, confidence, and identity</p>
+      </div>
+      <div class="wellness-cat">
+        <div class="wellness-cat-icon">🌸</div>
+        <h4>Feminine Care</h4>
+        <p>Periods, puberty, hygiene — no shame</p>
+      </div>
+      <div class="wellness-cat">
+        <div class="wellness-cat-icon">📚</div>
+        <h4>School & Social Life</h4>
+        <p>Stress, friendships, social media</p>
+      </div>
+      <div class="wellness-cat">
+        <div class="wellness-cat-icon">✨</div>
+        <h4>Glow & Lifestyle</h4>
+        <p>Skincare, routines, and self-care</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section class="journal-section" id="journal">
+  <div class="journal-inner">
+    <div class="mood-display">
+      <div class="mood-title">How are you feeling today?</div>
+      <div class="mood-row">
+        <div class="mood-item active"><span>😊</span><span>Happy</span></div>
+        <div class="mood-item"><span>😤</span><span>Stressed</span></div>
+        <div class="mood-item"><span>😌</span><span>Calm</span></div>
+        <div class="mood-item"><span>😴</span><span>Tired</span></div>
+        <div class="mood-item"><span>😰</span><span>Anxious</span></div>
+      </div>
+      <div class="streak-card">
+        <span>🔥</span>
+        <div class="streak-info">
+          <h4>7 Day Streak</h4>
+          <p>Keep journaling every day!</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">📔 Journal & Mood</div>
+      <h2 class="section-title">Reflect. Track. <em>Grow.</em></h2>
+      <p class="section-sub">Your journal is your private space. Track your moods, write your thoughts, and watch your patterns over time.</p>
+      <div class="journal-features">
+        <div class="journal-feature"><div class="journal-feature-dot"></div><span>Private journal entries</span></div>
+        <div class="journal-feature"><div class="journal-feature-dot"></div><span>Daily mood check-ins</span></div>
+        <div class="journal-feature"><div class="journal-feature-dot"></div><span>Streak tracking to build habits</span></div>
+        <div class="journal-feature"><div class="journal-feature-dot"></div><span>Calendar view of your entries</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community-section" id="community">
+  <div class="section-label">💬 Community</div>
+  <h2 class="section-title" style="color:white;">You're not <em>alone.</em></h2>
+  <p class="section-sub">Connect with girls who actually get what you're going through.</p>
+  <div class="community-inner">
+    <div class="community-posts">
+      <div class="community-post">
+        <div class="post-header">
+          <div class="post-avatar">Q</div>
+          <div>
+            <div class="post-name">anonymous_queen</div>
+            <div class="post-anon">🔒 Anonymous · Body & Confidence</div>
+          </div>
+        </div>
+        <div class="post-text">Started appreciating my body more after reading the wellness articles. It's a journey but I'm getting there 🌸</div>
+        <div class="post-actions">
+          <div class="post-action">❤️ 24</div>
+          <div class="post-action">💬 8 replies</div>
+        </div>
+      </div>
+      <div class="community-post">
+        <div class="post-header">
+          <div class="post-avatar" style="background:linear-gradient(135deg,#a855f7,#7c3aed);">S</div>
+          <div>
+            <div class="post-name">self_love_journey</div>
+            <div class="post-anon">🔒 Anonymous · Self-Love</div>
+          </div>
+        </div>
+        <div class="post-text">Talked to Belle about my anxiety and she actually understood. Didn't feel judged at all 💗</div>
+        <div class="post-actions">
+          <div class="post-action">❤️ 31</div>
+          <div class="post-action">💬 12 replies</div>
+        </div>
+      </div>
+    </div>
+    <div class="community-points">
+      <div class="community-point">
+        <div class="community-point-icon">🔒</div>
+        <div>
+          <h4>Fully Anonymous</h4>
+          <p>Post without revealing your identity. Your real name is never shown.</p>
+        </div>
+      </div>
+      <div class="community-point">
+        <div class="community-point-icon">🏷️</div>
+        <div>
+          <h4>Organized by Category</h4>
+          <p>Find posts about body confidence, mental health, school stress, and more.</p>
+        </div>
+      </div>
+      <div class="community-point">
+        <div class="community-point-icon">💬</div>
+        <div>
+          <h4>Comments & Replies</h4>
+          <p>Real conversations with girls who understand what you're going through.</p>
+        </div>
+      </div>
+      <div class="community-point">
+        <div class="community-point-icon">🛡️</div>
+        <div>
+          <h4>Safe Space Rules</h4>
+          <p>A community built on kindness, support, and mutual respect — always.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots" id="screenshots">
+  <div class="screenshots-title">
+    <div class="section-label">📱 See It In Action</div>
+    <h2 class="section-title">Beautiful by design.</h2>
+    <p style="color:var(--grey);font-size:16px;margin-top:8px;">Swap these placeholders with your real app screenshots</p>
+  </div>
+  <div class="screenshots-scroll">
+    <div class="screenshot-frame"><div class="screenshot-placeholder">🏠<span>Home Screen</span></div></div>
+    <div class="screenshot-frame"><div class="screenshot-placeholder">🤖<span>Belle AI</span></div></div>
+    <div class="screenshot-frame"><div class="screenshot-placeholder">🌸<span>Wellness Hub</span></div></div>
+    <div class="screenshot-frame"><div class="screenshot-placeholder">📔<span>Journal</span></div></div>
+    <div class="screenshot-frame"><div class="screenshot-placeholder">💬<span>Community</span></div></div>
+    <div class="screenshot-frame"><div class="screenshot-placeholder">👤<span>Profile</span></div></div>
+  </div>
+</section>
+
+<!-- JOIN THE FAMILY -->
+<section class="family">
+  <h2>Join The PeaBelle Family 💖</h2>
+  <p>You're not alone. PeaBelle is a growing community of girls learning, healing, and growing together — one day at a time.</p>
+  <a href="#download" class="btn-primary" style="background:white;color:var(--pink);box-shadow:0 8px 32px rgba(0,0,0,0.15);">⬇ Download PeaBelle Free</a>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="download" id="download">
+  <div class="download-inner">
+    <div>
+      <div class="section-label">⬇ Download</div>
+      <h2 class="section-title">Get PeaBelle on your phone.</h2>
+      <p class="section-sub">Free to download. No account required to explore. Start your wellness journey today.</p>
+      <div class="download-steps">
+        <div class="download-step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <h4>Tap Download APK</h4>
+            <p>The app file will download to your phone.</p>
+          </div>
+        </div>
+        <div class="download-step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <h4>Open the file</h4>
+            <p>Find it in your Downloads folder and tap to open.</p>
+          </div>
+        </div>
+        <div class="download-step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <h4>Allow installation</h4>
+            <p>Tap Settings → enable "Install unknown apps" → go back and install.</p>
+          </div>
+        </div>
+        <div class="download-step">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            <h4>You're in! 🌸</h4>
+            <p>Open PeaBelle and create your account.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="download-cta">
+      <div class="phone-emoji">📱</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--dark);">PeaBelle</h3>
+      <p style="font-size:14px;color:var(--grey);text-align:center;">Your safe space for self-love, wellness & growth</p>
+      <!-- REPLACE href WITH YOUR GOOGLE DRIVE APK LINK -->
+      <a href="YOUR_GOOGLE_DRIVE_APK_LINK_HERE" class="btn-primary" style="width:100%;justify-content:center;font-size:17px;">⬇ Download APK</a>
+      <div class="download-note">📱 Android Only · Free · No ads</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-title">
+      <div class="section-label">❓ FAQ</div>
+      <h2 class="section-title">Having trouble?</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        How do I install PeaBelle?
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <ol>
+            <li>Tap the Download APK button above</li>
+            <li>Wait for the file to download</li>
+            <li>Open your Downloads folder and tap the file</li>
+            <li>If prompted, tap Settings and enable "Install unknown apps"</li>
+            <li>Go back and tap Install</li>
+            <li>Open PeaBelle from your home screen 🌸</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        Why does Android say "Unknown Sources"?
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Android shows this warning for any app installed outside the Play Store. This is completely normal and safe for PeaBelle. Simply tap Settings when prompted, enable "Install unknown apps" for your browser, then go back and install. PeaBelle is safe and your data is protected.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        The app won't install. What do I do?
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Try these steps:
+          <ul>
+            <li>Make sure you have enough storage space on your phone</li>
+            <li>Check that "Install unknown apps" is enabled for your browser</li>
+            <li>Try downloading again — the file may not have downloaded fully</li>
+            <li>Restart your phone and try again</li>
+            <li>If it still doesn't work, contact us at the email below</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        Is my information private?
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Yes. Your journal entries are private and only visible to you. Your community posts are anonymous — your real name is never shown. Your conversations with Belle AI are stored securely and are never shared. We take your privacy seriously.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        Does Belle AI actually understand me?
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Belle AI is powered by advanced AI technology and is designed to be emotionally intelligent, warm, and supportive. She adapts to your mood and conversation history to give you responses that feel personal — not generic. She's not a therapist, but she's always here to listen.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        How do I contact support?
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <!-- REPLACE WITH YOUR REAL EMAIL -->
+          Email us at <strong>support@peabelle.app</strong> and we'll get back to you as soon as possible. You can also reach us on Instagram or TikTok.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">💌 Get In Touch</div>
+  <h2 class="section-title">We're here for you.</h2>
+  <p class="section-sub">Have a question, suggestion, or just want to say hi? Reach out — we'd love to hear from you.</p>
+  <div class="contact-links">
+    <!-- REPLACE WITH YOUR REAL LINKS -->
+    <a href="mailto:support@peabelle.app" class="contact-link"><span>📧</span> support@peabelle.app</a>
+    <a href="https://instagram.com/peabelle" class="contact-link" target="_blank"><span>📸</span> @peabelle</a>
+    <a href="https://tiktok.com/@peabelle" class="contact-link" target="_blank"><span>🎵</span> @peabelle</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🌸 PeaBelle</div>
+  <div class="footer-copy">© 2026 PeaBelle. Made with 💗 for girls everywhere.</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function toggleFAQ(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.why-stat, .chat-feature, .wellness-cat, .journal-feature, .community-point, .community-post, .download-step, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
